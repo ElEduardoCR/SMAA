@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Manufactura Avanzada y Automatización | SMAA</title>
+    <meta name="description" content="SMAA - Empresa en Chihuahua especializada en estructuras soldadas, maquinado de precisión CNC y automatización en general.">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-text">SMA<span class="logo-accent">A</span></span>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#calidad">Calidad ISO</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">Manufactura Avanzada y <span class="highlight">Automatización</span></h1>
+                <p class="hero-subtitle">Estructuras soldadas y maquinado de precisión CNC en Chihuahua Capital.</p>
+                <a href="#nosotros" class="btn btn-primary">Conoce más</a>
+            </div>
+        </section>
+
+        <!-- Misión y Visión (Mexican Patriotic Theme) -->
+        <section id="nosotros" class="mission-vision">
+            <div class="container">
+                <div class="values-grid">
+                    <div class="card mission-card">
+                        <div class="card-icon green"><i class="fa-solid fa-flag"></i></div>
+                        <h2>Misión</h2>
+                        <p>Impulsar la industria desde Chihuahua hacia el mundo, brindando soluciones de manufactura avanzada y automatización que honren la capacidad, el talento y el incansable espíritu trabajador de México. Construimos con precisión y soldamos con el orgullo de nuestra tierra para fortalecer el desarrollo nacional.</p>
+                    </div>
+                    <div class="card vision-card">
+                        <div class="card-icon red"><i class="fa-solid fa-eye"></i></div>
+                        <h2>Visión</h2>
+                        <p>Posicionarnos como el principal referente de innovación y excelencia en maquinado CNC y estructuras soldadas en el norte del país. Aspiramos a ser un pilar del crecimiento industrial de México, demostrando que el talento y la calidad hecha en Chihuahua compiten en los más altos estándares globales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ISO Certification Progress -->
+        <section id="calidad" class="iso-certification">
+            <div class="container">
+                <div class="iso-content">
+                    <div class="iso-text">
+                        <h2>Compromiso con la <span class="highlight-green">Calidad ISO</span></h2>
+                        <p>En SMAA trabajamos bajo los más estrictos estándares de calidad. Actualmente nos encontramos en nuestro proceso de certificación ISO, avanzando a paso firme para consolidar nuestra excelencia operativa.</p>
+                        <p class="iso-subtext"><i class="fa-solid fa-clock"></i> Estimamos obtener nuestra certificación oficial en aproximadamente <strong>3 meses</strong>.</p>
+                    </div>
+                    
+                    <div class="progress-wrapper">
+                        <div class="progress-labels">
+                            <span class="progress-title">Progreso de Certificación</span>
+                            <span class="progress-percentage">80%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" data-target="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Gallery -->
+        <section id="galeria" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Galería de <span class="highlight-red">Proyectos</span></h2>
+                <p class="section-desc">Acá se muestran las imágenes subidas a la carpeta de GitHub.</p>
+                
+                <!-- Loading indicator -->
+                <div id="gallery-loader" class="loader-container">
+                    <div class="loader"></div>
+                    <p>Cargando imágenes de GitHub...</p>
+                </div>
+                
+                <div id="gallery-grid" class="gallery-grid">
+                    <!-- Dynamic images from Github API will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>SMAA</h3>
+                <p>Servicios de Manufactura Avanzada y Automatización</p>
+                <p class="footer-desc">Estructuras soldadas y maquinado CNC.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Ubicación</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Joaquín Terrazas 2530, Obrera</p>
+                <p>31350 Chihuahua, Chih., México</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SMAA. Hecho con orgullo en México.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
