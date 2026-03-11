@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Progress Bar Animation with Intersection Observer
     const progressFill = document.querySelector('.progress-bar-fill');
-    
+
     if (progressFill) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         }, { threshold: 0.5 });
-        
+
         observer.observe(progressFill);
     }
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadGalleryImages() {
         try {
             const response = await fetch(apiUrl);
-            
+
             if (!response.ok) {
                 // If folder doesn't exist yet or rate limit
                 throw new Error('La carpeta "images" en GitHub aún no existe o no tiene imágenes públicas. <br>Por favor sube imágenes a: <strong>github.com/ElEduardoCR/SMAA/tree/main/images</strong>');
@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const files = await response.json();
             // Filter only image files
-            const imageFiles = files.filter(file => 
-                file.type === 'file' && 
+            const imageFiles = files.filter(file =>
+                file.type === 'file' &&
                 file.name.match(/\.(jpg|jpeg|png|gif|webp)$/i)
             );
 
@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 imageFiles.forEach(file => {
                     const div = document.createElement('div');
                     div.className = 'gallery-item';
-                    
+
                     const img = document.createElement('img');
                     img.src = file.download_url; // Direct link to raw image
                     img.alt = file.name;
                     img.loading = 'lazy';
-                    
+
                     div.appendChild(img);
                     galleryGrid.appendChild(div);
                 });
@@ -75,4 +75,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     loadGalleryImages();
+
+    // 3. Dynamic Partner Logic
+    const partnerLogos = [
+        "partner_logos/isicsa.jpeg",
+        "partner_logos/sms.jpeg",
+        "partner_logos/voxa.png"
+    ];
+    let currentPartnerIndex = 0;
+    const partnerImgElement = document.getElementById('partner-logo-target');
+
+    if (partnerImgElement && partnerLogos.length > 0) {
+        setInterval(() => {
+            // Fade out
+            partnerImgElement.classList.remove('active');
+
+            setTimeout(() => {
+                // Change source
+                currentPartnerIndex = (currentPartnerIndex + 1) % partnerLogos.length;
+                partnerImgElement.src = partnerLogos[currentPartnerIndex];
+
+                // Fade back in once loaded
+                partnerImgElement.onload = () => {
+                    partnerImgElement.classList.add('active');
+                };
+            }, 500); // Wait for fade out transition (0.5s)
+        }, 2000); // 2 seconds between changes
+    }
 });
