@@ -164,11 +164,29 @@ h4 {
     max-width: 800px;
 }
 
+.hero-content.text-center {
+    margin: 0 auto;
+}
+
+.hero-smaa-acronym {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--smaa-white);
+    letter-spacing: 5px;
+    line-height: 1;
+}
+
+/* Stagger delay for new hero elements */
+.hero-smaa-acronym { transition-delay: 0.1s; }
+.hero-title { transition-delay: 0.3s; }
+.hero-subtitle { transition-delay: 0.5s; }
+.hero-content .btn { transition-delay: 0.7s; }
+
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
-    animation: fadeUp 1s ease-out;
 }
 
 .hero-title .highlight {
