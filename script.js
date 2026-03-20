@@ -102,4 +102,21 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500); // Wait for fade out transition (0.5s)
         }, 2000); // 2 seconds between changes
     }
+    
+    // 4. Scroll Animations Observer
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    if (animatedElements.length > 0) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // scrollObserver.unobserve(entry.target); // Animates every time or unobserve if one-off
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animatedElements.forEach(el => {
+            scrollObserver.observe(el);
+        });
+    }
 });
