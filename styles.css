@@ -659,6 +659,77 @@ h4 {
     opacity: 1;
 }
 
+/* Contact Section */
+.contact-section {
+    padding: 6rem 0;
+    background-color: #f9f9f9;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-subtitle {
+    font-size: 1.5rem;
+    color: var(--smaa-black);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-promise {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-method-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    transition: var(--transition);
+    border-bottom: 4px solid var(--smaa-orange);
+}
+
+.contact-method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(242, 101, 34, 0.15);
+}
+
+.contact-method-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-method-card h3 {
+    font-size: 1.2rem;
+    color: var(--smaa-black);
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    font-size: 1.2rem;
+    color: var(--smaa-orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--smaa-black);
+}
+
 /* Footer */
 .footer {
     background-color: var(--smaa-black);
