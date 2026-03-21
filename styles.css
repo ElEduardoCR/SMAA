@@ -101,6 +101,12 @@ h4 {
     color: var(--smaa-orange);
 }
 
+.nav-brand-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -291,6 +297,91 @@ h4 {
     font-size: 1.1rem;
 }
 
+/* Services Section */
+.services-section {
+    padding: 6rem 0;
+    background-color: var(--smaa-white);
+    overflow: hidden;
+}
+
+.services-section .container {
+    width: 96%;
+    max-width: 1800px;
+}
+
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.service-row:last-child {
+    margin-bottom: 0;
+}
+
+.service-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--smaa-black);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.service-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--smaa-orange);
+}
+
+.service-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.service-gallery {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background: #000;
+    position: relative;
+    height: 450px;
+    display: flex;
+}
+
+.gallery-track {
+    display: flex;
+    height: 100%;
+    animation: scrollGallery 20s linear infinite;
+    width: max-content;
+}
+
+.service-row:hover .gallery-track {
+    animation-play-state: paused;
+}
+
+.gallery-track img {
+    height: 100%;
+    width: 550px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
 /* Machine Park (New Section) */
 .machine-park {
     padding: 6rem 0;
@@ -306,33 +397,43 @@ h4 {
 
 .machine-card {
     background: #fff;
-    padding: 3rem 2rem;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
-    border-top: 4px solid var(--smaa-orange);
+    border-top: none;
     text-align: center;
+    overflow: hidden;
 }
 
 .machine-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(242, 101, 34, 0.1);
+    box-shadow: 0 15px 40px rgba(242, 101, 34, 0.15);
 }
 
-.machine-icon {
-    font-size: 3rem;
-    color: var(--smaa-orange);
-    margin-bottom: 1.5rem;
+.machine-img-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #eaeaea;
+    border-bottom: 4px solid var(--smaa-orange);
+}
+
+.machine-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.machine-card:hover .machine-img-wrapper img {
+    transform: scale(1.05);
 }
 
 .machine-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    margin: 1.5rem;
     color: var(--smaa-black);
-}
-
-.machine-card p {
-    color: var(--text-muted);
 }
 
 /* ISO Section */
@@ -548,6 +649,13 @@ h4 {
     min-width: 250px;
 }
 
+.footer-brand-logo {
+    height: 65px;
+    width: auto;
+    margin-bottom: 1rem;
+    display: block;
+}
+
 .footer-info h3 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -593,6 +701,15 @@ h4 {
 }
 
 /* Animations */
+@keyframes scrollGallery {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -631,6 +748,20 @@ h4 {
     .values-grid,
     .iso-content {
         grid-template-columns: 1fr;
+    }
+
+    .service-row, .service-row.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .service-gallery {
+        width: 100%;
+        height: 300px;
+    }
+
+    .gallery-track img {
+        width: 400px;
     }
 
     .hero-title {
