@@ -72,76 +72,67 @@ h4 {
     color: var(--smaa-black);
 }
 
-/* Navbar */
-.navbar {
+/* Floating Navigation */
+.floating-navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 6px;
+    transition: var(--transition);
 }
 
-.nav-content {
+.nav-container {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo-text {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--smaa-black);
-}
-
-.logo-accent {
-    color: var(--smaa-orange);
-}
-
-.nav-brand-logo {
-    height: 30px;
-    max-width: 200px;
-    object-fit: contain;
-    width: auto;
-    display: block;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--smaa-black);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: var(--transition);
+    margin: 0;
+    padding: 0;
     position: relative;
-    padding-bottom: 5px;
+    z-index: 2;
 }
 
-.nav-links a::after {
-    content: '';
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    display: block;
+    border-radius: 50px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--smaa-black);
+}
+
+.nav-item.active {
+    color: var(--smaa-white);
+}
+
+/* Sliding Indicator */
+.nav-indicator {
     position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: 0;
+    top: 0;
     left: 0;
+    height: 100%;
+    width: 0;
     background-color: var(--smaa-orange);
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--smaa-orange);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
+    border-radius: 50px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 15px rgba(242, 101, 34, 0.4);
 }
 
 /* Hero Section */
