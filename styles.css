@@ -102,7 +102,9 @@ h4 {
 }
 
 .nav-brand-logo {
-    height: 50px;
+    height: 30px;
+    max-width: 200px;
+    object-fit: contain;
     width: auto;
     display: block;
 }
@@ -360,7 +362,7 @@ h4 {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     background: #000;
     position: relative;
-    height: 450px;
+    height: 320px;
     display: flex;
 }
 
@@ -377,7 +379,7 @@ h4 {
 
 .gallery-track img {
     height: 100%;
-    width: 550px;
+    width: 450px;
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -413,7 +415,7 @@ h4 {
 
 .machine-img-wrapper {
     width: 100%;
-    height: 250px;
+    height: 180px;
     overflow: hidden;
     background-color: #eaeaea;
     border-bottom: 4px solid var(--smaa-orange);
@@ -650,7 +652,9 @@ h4 {
 }
 
 .footer-brand-logo {
-    height: 65px;
+    height: 50px;
+    max-width: 250px;
+    object-fit: contain;
     width: auto;
     margin-bottom: 1rem;
     display: block;
