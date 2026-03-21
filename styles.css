@@ -161,7 +161,7 @@ h4 {
     width: 100%;
     height: 100%;
     /* Dark overlay with orange tint */
-    background: linear-gradient(135deg, rgba(17, 17, 17, 0.95) 0%, rgba(242, 101, 34, 0.3) 100%), url('https://images.unsplash.com/photo-1565439390214-c1483dc0adeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.95) 0%, rgba(242, 101, 34, 0.3) 100%), url('hero.jpg') center/cover;
     z-index: 1;
 }
 
@@ -355,6 +355,41 @@ h4 {
     line-height: 1.8;
 }
 
+.software-service {
+    max-width: 900px;
+    margin: 6rem auto 0 auto;
+    text-align: center;
+    padding: 3rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+.software-service .centered-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--smaa-black);
+    position: relative;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.software-service .centered-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--smaa-orange);
+}
+
+.software-service p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
 .service-gallery {
     flex: 1;
     overflow: hidden;
@@ -369,8 +404,12 @@ h4 {
 .gallery-track {
     display: flex;
     height: 100%;
-    animation: scrollGallery 20s linear infinite;
+    animation: scrollGallery 25s linear infinite;
     width: max-content;
+}
+
+.gallery-track.long-track {
+    animation-duration: 50s;
 }
 
 .service-row:hover .gallery-track {
