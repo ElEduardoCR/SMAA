@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Dynamic Partner Logic
     const partnerLogos = [
-        "partner_logos/isicsa.jpeg",
-        "partner_logos/sms.jpeg",
+        "partner_logos/isicsa.png",
+        "partner_logos/sms.png",
         "partner_logos/voxa.png"
     ];
     let currentPartnerIndex = 0;
