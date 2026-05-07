@@ -112,12 +112,21 @@ h4 {
     z-index: 1000;
     padding: 6px;
     transition: var(--transition);
+    max-width: 95vw;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.floating-navbar::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-container {
     position: relative;
     display: flex;
     align-items: center;
+    width: max-content;
 }
 
 .nav-links {
@@ -138,6 +147,7 @@ h4 {
     display: block;
     border-radius: 50px;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -893,11 +903,15 @@ h4 {
     }
 
     .gallery-track img {
-        width: 400px;
+        width: 300px;
     }
 
     .hero-title {
         font-size: 3rem;
+    }
+
+    .hero-smaa-acronym {
+        font-size: 4.5rem;
     }
 
     .iso-content {
@@ -911,7 +925,11 @@ h4 {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-smaa-acronym {
+        font-size: 3.5rem;
     }
 
     .hero-subtitle {
@@ -919,11 +937,27 @@ h4 {
     }
 
     .card {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    .gallery-track img {
+        width: 250px;
+    }
+
+    .service-gallery {
+        height: 250px;
     }
 
     .footer-content {
         flex-direction: column;
+    }
+
+    .language-switch {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.85rem;
     }
 }
 

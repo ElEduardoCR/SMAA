@@ -46,10 +46,25 @@
 
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 2.5rem;
     align-items: center;
     justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .client-logo-wrapper {
+        padding: 1rem;
+    }
+    
+    .dynamic-partner-container {
+        padding: 1.5rem;
+        height: 200px;
+    }
+    
+    .partner-logo {
+        max-height: 150px;
+    }
 }
 
 .client-logo-wrapper {
