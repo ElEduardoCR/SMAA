@@ -72,6 +72,33 @@ h4 {
     color: var(--smaa-black);
 }
 
+/* Language Switch */
+.language-switch {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--smaa-orange);
+    color: var(--smaa-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 4px 15px rgba(242, 101, 34, 0.4);
+    z-index: 9999;
+    transition: var(--transition);
+}
+
+.language-switch:hover {
+    transform: scale(1.1);
+    background-color: var(--smaa-black);
+    color: var(--smaa-orange);
+}
+
 /* Floating Navigation */
 .floating-navbar {
     position: fixed;
