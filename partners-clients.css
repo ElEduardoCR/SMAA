@@ -46,22 +46,27 @@
 
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2.5rem;
     align-items: center;
     justify-items: center;
 }
 
 @media (max-width: 768px) {
-    .client-logo-wrapper {
-        padding: 1rem;
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
     }
-    
+
+    .client-logo-wrapper {
+        padding: 1.75rem;
+    }
+
     .dynamic-partner-container {
         padding: 1.5rem;
         height: 200px;
     }
-    
+
     .partner-logo {
         max-height: 150px;
     }
@@ -69,7 +74,7 @@
 
 .client-logo-wrapper {
     background: #fff;
-    padding: 1.5rem;
+    padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -78,6 +83,12 @@
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.client-logo-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .client-logo {
@@ -86,14 +97,10 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.75;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.client-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+.client-logo-wrapper:hover .client-logo {
     transform: scale(1.05);
 }
 
@@ -104,11 +111,4 @@
 
 .client-logo-wrapper.bg-bc {
     background: #f7f7f7;
-}
-
-/* When the card uses a brand background, show the logo in its real colors */
-.client-logo-wrapper.bg-honeywell .client-logo,
-.client-logo-wrapper.bg-bc .client-logo {
-    filter: none;
-    opacity: 1;
 }
