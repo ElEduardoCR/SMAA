@@ -470,6 +470,217 @@ h4 {
     display: block;
 }
 
+/* Welding Specialty */
+.welding-specialty {
+    position: relative;
+    padding: 7rem 0;
+    overflow: hidden;
+    color: var(--smaa-white);
+    background:
+        radial-gradient(circle at 92% 8%, rgba(242, 101, 34, 0.2), transparent 28rem),
+        linear-gradient(135deg, #0d0f12 0%, #171b20 52%, #101215 100%);
+}
+
+.welding-specialty::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+}
+
+.welding-specialty .container {
+    position: relative;
+    z-index: 1;
+}
+
+.welding-heading {
+    max-width: 820px;
+    margin-bottom: 3.5rem;
+}
+
+.section-kicker,
+.scope-label,
+.cwi-role {
+    display: block;
+    color: var(--smaa-orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.welding-heading h2 {
+    margin: 0.55rem 0 1rem;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+}
+
+.welding-heading p {
+    max-width: 720px;
+    color: #c9cdd2;
+    font-size: 1.1rem;
+}
+
+.welding-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.welding-scope,
+.cwi-profile {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.welding-scope {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem;
+}
+
+.scope-icon {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--smaa-orange);
+    color: #fff;
+    font-size: 1.55rem;
+    box-shadow: 0 12px 30px rgba(242, 101, 34, 0.25);
+}
+
+.welding-scope h3,
+.certificates-heading h3 {
+    margin: 0.45rem 0 1rem;
+    font-size: 1.8rem;
+    line-height: 1.25;
+}
+
+.welding-scope p,
+.cwi-profile p,
+.certificates-heading p {
+    color: #bdc2c8;
+}
+
+.scope-points {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: 1.4rem;
+    list-style: none;
+    color: #eceff2;
+}
+
+.scope-points i {
+    margin-right: 0.55rem;
+    color: var(--smaa-orange);
+}
+
+.cwi-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+.cwi-avatar {
+    width: 148px;
+    height: 148px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 4px solid var(--smaa-orange);
+    border-radius: 50%;
+    background: linear-gradient(145deg, #343a41, #181b1f);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+}
+
+.cwi-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 32%;
+    transform: scale(1.42);
+}
+
+.cwi-profile h3 {
+    margin: 0.45rem 0 0.7rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 1.25rem;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.linkedin-link i {
+    color: #0a66c2;
+    font-size: 1.35rem;
+}
+
+.linkedin-link:hover {
+    color: var(--smaa-orange);
+    transform: translateY(-2px);
+}
+
+.certificates-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem 0 1.5rem;
+}
+
+.certificates-heading h3 {
+    margin-bottom: 0;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.certificate-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    background: #022237;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+    transition: var(--transition);
+}
+
+.certificate-card:hover {
+    border-color: var(--smaa-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 22px 48px rgba(242, 101, 34, 0.14);
+}
+
+.certificate-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Machine Park (New Section) */
 .machine-park {
     padding: 6rem 0;
@@ -926,6 +1137,25 @@ h4 {
         min-width: 300px;
     }
 
+    .welding-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .cwi-profile {
+        flex-direction: row;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .cwi-avatar {
+        flex: 0 0 148px;
+        margin-bottom: 0;
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .hero-title {
         font-size: 3rem;
     }
@@ -971,6 +1201,38 @@ h4 {
 
     .service-gallery {
         height: 220px;
+    }
+
+    .welding-specialty {
+        padding: 5rem 0;
+    }
+
+    .welding-heading {
+        margin-bottom: 2.5rem;
+    }
+
+    .welding-scope {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+    }
+
+    .cwi-profile {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .certificates-heading {
+        display: block;
+        margin-top: 3rem;
+    }
+
+    .certificates-heading p {
+        margin-top: 0.5rem;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
     }
 
     .machines-grid {
