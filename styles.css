@@ -503,8 +503,7 @@ h4 {
 }
 
 .section-kicker,
-.scope-label,
-.cwi-role {
+.scope-label {
     display: block;
     color: var(--smaa-orange);
     font-family: 'Oswald', sans-serif;
@@ -528,13 +527,12 @@ h4 {
 
 .welding-overview {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: stretch;
 }
 
-.welding-scope,
-.cwi-profile {
+.welding-scope {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.055);
@@ -568,7 +566,6 @@ h4 {
 }
 
 .welding-scope p,
-.cwi-profile p,
 .certificates-heading p {
     color: #bdc2c8;
 }
@@ -584,62 +581,6 @@ h4 {
 .scope-points i {
     margin-right: 0.55rem;
     color: var(--smaa-orange);
-}
-
-.cwi-profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2.5rem 2rem;
-    text-align: center;
-}
-
-.cwi-avatar {
-    width: 148px;
-    height: 148px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-    border: 4px solid var(--smaa-orange);
-    border-radius: 50%;
-    background: linear-gradient(145deg, #343a41, #181b1f);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
-}
-
-.cwi-avatar img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 32%;
-    transform: scale(1.42);
-}
-
-.cwi-profile h3 {
-    margin: 0.45rem 0 0.7rem;
-    font-size: 1.45rem;
-    line-height: 1.25;
-}
-
-.linkedin-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-top: 1.25rem;
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.linkedin-link i {
-    color: #0a66c2;
-    font-size: 1.35rem;
-}
-
-.linkedin-link:hover {
-    color: var(--smaa-orange);
-    transform: translateY(-2px);
 }
 
 .certificates-heading {
@@ -1141,17 +1082,6 @@ h4 {
         grid-template-columns: 1fr;
     }
 
-    .cwi-profile {
-        flex-direction: row;
-        gap: 2rem;
-        text-align: left;
-    }
-
-    .cwi-avatar {
-        flex: 0 0 148px;
-        margin-bottom: 0;
-    }
-
     .certificates-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1214,12 +1144,6 @@ h4 {
     .welding-scope {
         grid-template-columns: 1fr;
         padding: 2rem 1.5rem;
-    }
-
-    .cwi-profile {
-        flex-direction: column;
-        padding: 2rem 1.5rem;
-        text-align: center;
     }
 
     .certificates-heading {
