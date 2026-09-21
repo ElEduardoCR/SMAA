@@ -1,22 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Progress Bar Animation with Intersection Observer
-    const progressFill = document.querySelector('.progress-bar-fill');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (progressFill) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target.getAttribute('data-target');
-                    entry.target.style.width = target + '%';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(progressFill);
-    }
-
-    // 3. Dynamic Partner Logic
+    // Dynamic Partner Logic
     const partnerLogos = [
         "partner_logos/isicsa.png",
         "partner_logos/sms.png",
@@ -25,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPartnerIndex = 0;
     const partnerImgElement = document.getElementById('partner-logo-target');
 
-    if (partnerImgElement && partnerLogos.length > 0) {
+    if (partnerImgElement && partnerLogos.length > 0 && !reduceMotion) {
         setInterval(() => {
             // Fade out
             partnerImgElement.classList.remove('active');
@@ -40,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     partnerImgElement.classList.add('active');
                 };
             }, 500); // Wait for fade out transition (0.5s)
-        }, 2000); // 2 seconds between changes
+        }, 3500);
     }
     
-    // 4. Scroll Animations Observer
+    // Scroll Animations Observer
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    if (animatedElements.length > 0) {
+    if (animatedElements.length > 0 && !reduceMotion) {
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -58,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         animatedElements.forEach(el => {
             scrollObserver.observe(el);
         });
+    } else {
+        animatedElements.forEach(el => el.classList.add('is-visible'));
     }
 
     // Floating Navigation Indicator Logic
@@ -103,6 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         }
-    });
+    }, { passive: true });
 
 });
