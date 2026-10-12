@@ -1,6 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Each project can be inspected at rest, with buttons, keyboard or touch.
+    document.querySelectorAll('.service-gallery').forEach(gallery => {
+        const track = gallery.querySelector('.gallery-track');
+        const images = Array.from(track.querySelectorAll('img'));
+        const controls = gallery.querySelector('.gallery-controls');
+        const previous = controls.querySelector('.gallery-prev');
+        const next = controls.querySelector('.gallery-next');
+        const count = controls.querySelector('.gallery-count');
+        let current = 0;
+        let pendingFrame = 0;
+
+        function update() {
+            pendingFrame = 0;
+            current = Math.min(images.length - 1, Math.max(0, Math.round(track.scrollLeft / track.clientWidth)));
+            count.textContent = `${current + 1} / ${images.length}`;
+            previous.disabled = current === 0;
+            next.disabled = current === images.length - 1;
+        }
+        function goTo(index, instant = false) {
+            const target = Math.min(images.length - 1, Math.max(0, index));
+            track.scrollTo({ left: target * track.clientWidth, behavior: instant || reduceMotion ? 'instant' : 'smooth' });
+        }
+        previous.addEventListener('click', () => goTo(current - 1));
+        next.addEventListener('click', () => goTo(current + 1));
+        track.addEventListener('scroll', () => {
+            if (!pendingFrame) pendingFrame = requestAnimationFrame(update);
+        }, { passive: true });
+        track.addEventListener('keydown', event => {
+            const destinations = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: images.length - 1 };
+            if (event.key in destinations) {
+                event.preventDefault();
+                goTo(destinations[event.key]);
+            }
+        });
+        new ResizeObserver(() => goTo(current, true)).observe(track);
+        controls.hidden = false;
+        update();
+    });
+
     // Dynamic Partner Logic
     const partnerLogos = [
         "partner_logos/isicsa.png",

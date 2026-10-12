@@ -5,14 +5,13 @@ Esta es la página de presentación para **Servicios de Manufactura Avanzada y A
 ## Características
 - **Diseño Responsivo**: Adaptable a dispositivos móviles y computadoras.
 - **Tema Visual**: Colores institucionales y nacionales (Verde, Blanco, Rojo) con acentos industriales.
-- **Animaciones**: Barra de progreso animada para la certificación ISO 9001.
-- **Galería Dinámica**: Las imágenes se cargan automáticamente desde este repositorio de GitHub (carpeta `images/`).
+- **Galerías de servicios**: Navegación con flechas, teclado o desplazamiento táctil, con las piezas completas en el encuadre.
+- **Certificaciones próximas**: Sección de Pilz México y ROSS Controls, con estado de espera de los certificados y enlaces oficiales.
 
-## ¿Cómo subir imágenes a la Galería?
-Para que una nueva imagen aparezca en la sección de "Galería de Proyectos" de la página web:
-1. Sube tus imágenes (formato `.jpg`, `.png`, `.jpeg`, `.gif`, `.webp`) a la carpeta `images/` de este repositorio en la rama `main`.
-2. La página web detectará automáticamente los archivos nuevos usando la API de GitHub y los mostrará.
-3. *Nota*: Si estás trabajando en modo local, es posible que el navegador bloquee la petición si excedes el límite de peticiones de la API de GitHub, pero funcionará perfectamente una vez publicado o con uso normal.
+## ¿Cómo actualizar las imágenes?
+1. Conserva las fotografías originales en `images/` y guarda las versiones retocadas y optimizadas en `images/actualizadas/` como WebP. Las nuevas fotos de maquinaria están en `maquinaria/actualizada/`.
+2. Actualiza la ruta, el texto alternativo y las dimensiones de la imagen en `index.html` y `index-en.html`. Las galerías usan las imágenes incluidas en esos archivos; no consultan la API de GitHub.
+3. Incluye cada imagen una sola vez dentro de su `gallery-track`. Al agregar o quitar imágenes, actualiza también el contador inicial del HTML; JavaScript lo mantiene durante la navegación.
 
 ## Instrucciones para publicar en GitHub Pages
 Si deseas que esta página esté en línea gratis:
